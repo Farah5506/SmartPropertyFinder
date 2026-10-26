@@ -1,6 +1,3 @@
-// Fake data for Phase 1 (no database yet)
-// In Phase 2 this will come from storage instead
-
 export const properties = [
   { id: 'p1', type: 'rent', title: '2-bedroom apartment', location: 'New Cairo', compound: 'Mivida', price: 18000, rooms: 2, area: 120, advertiserId: 'a1' },
   { id: 'p2', type: 'rent', title: 'Studio near AUC', location: 'New Cairo', compound: '', price: 9500, rooms: 1, area: 60, advertiserId: 'a2' },
@@ -24,7 +21,6 @@ export const users = [
   { id: 'u3', name: 'Nour Ibrahim', phone: '01555556666', email: 'nour@gmail.com', memberSince: '2026' },
 ];
 
-// targetId = the person being rated (advertiser or user)
 export const reviews = [
   { id: 'r1', targetId: 'a1', reviewerName: 'Sara Mahmoud', stars: 5, comment: 'Very helpful and answered quickly.' },
   { id: 'r2', targetId: 'a1', reviewerName: 'Omar Khaled', stars: 4, comment: 'The apartment was exactly like the photos.' },
@@ -35,14 +31,12 @@ export const reviews = [
   { id: 'r7', targetId: 'u2', reviewerName: 'Ahmed Hassan', stars: 4, comment: 'Serious buyer, good communication.' },
 ];
 
-// users who asked about the advertiser's properties
 export const inquiries = [
   { id: 'i1', userId: 'u1', propertyId: 'p1' },
   { id: 'i2', userId: 'u2', propertyId: 'p5' },
   { id: 'i3', userId: 'u3', propertyId: 'p4' },
 ];
 
-// logged-in accounts (until we have real login in Phase 2)
 export const currentUser = users[0];
 export const currentAdvertiser = advertisers[0];
 

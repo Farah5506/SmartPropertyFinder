@@ -3,7 +3,6 @@ import { Ionicons } from '@expo/vector-icons';
 import colors from '../theme/colors';
 import { formatPrice } from '../utils/formatters';
 
-// actionIcon is optional (heart for favourites, trash for delete...)
 export default function PropertyCard({ property, onPress, actionIcon, actionColor, onActionPress }) {
   return (
     <Pressable style={styles.card} onPress={onPress}>

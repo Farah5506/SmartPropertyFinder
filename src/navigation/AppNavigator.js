@@ -11,7 +11,6 @@ import AdvertiserPublicProfileScreen from '../features/profiles/screens/Advertis
 
 const Stack = createNativeStackNavigator();
 
-// header style for screens that open on top of the tabs
 const headerOptions = {
   headerShown: true,
   headerStyle: { backgroundColor: colors.primary },

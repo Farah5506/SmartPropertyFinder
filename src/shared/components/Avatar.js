@@ -1,7 +1,6 @@
 import { View, Text, StyleSheet } from 'react-native';
 import colors from '../theme/colors';
 
-// shows the first letters of the name in a circle (no photos yet)
 export default function Avatar({ name, size = 72 }) {
   let initials = '?';
   const parts = name.trim().split(' ');

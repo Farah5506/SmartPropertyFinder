@@ -2,7 +2,6 @@ import { View, Pressable, StyleSheet } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import colors from '../theme/colors';
 
-// if onSelect is given, the stars can be tapped to choose a rating
 export default function RatingStars({ rating, size = 18, onSelect }) {
   const stars = [1, 2, 3, 4, 5];
 
