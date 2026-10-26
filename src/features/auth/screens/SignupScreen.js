@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { View, Text, TextInput, Pressable, ScrollView, Alert, StyleSheet } from 'react-native';
-import RoleSelector from '../../components/common/RoleSelector';
-import { isValidEmail, isValidPassword, isValidPhone } from '../../utils/validators';
+import RoleSelector from '../components/RoleSelector';
+import { isValidEmail, isValidPassword, isValidPhone } from '../../../shared/utils/validators';
 
 export default function SignupScreen({ navigation }) {
   const [role, setRole] = useState('user');
