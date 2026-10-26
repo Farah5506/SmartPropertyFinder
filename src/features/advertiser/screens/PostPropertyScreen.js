@@ -52,7 +52,7 @@ export default function PostPropertyScreen() {
 
     setError('');
 
-    // Phase 1: not saved yet, storage comes in Phase 2
+    
     Alert.alert('Property posted', 'Your property is now listed', [
       { text: 'OK', onPress: clearForm },
     ]);
