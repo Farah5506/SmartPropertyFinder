@@ -1,4 +1,3 @@
-// Advertiser views a user's profile and ratings
 import { useState } from 'react';
 import { View, Text, ScrollView, Alert, StyleSheet } from 'react-native';
 import Avatar from '../../../shared/components/Avatar';
@@ -10,7 +9,6 @@ import { getAverageRating } from '../../../shared/utils/formatters';
 import colors from '../../../shared/theme/colors';
 
 export default function UserPublicProfileScreen({ route }) {
-  // if no id is passed, show the first user (for testing)
   const userId = route.params?.userId || 'u1';
   const user = users.find((u) => u.id === userId);
 
