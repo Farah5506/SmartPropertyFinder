@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { View, Text, TextInput, Pressable, StyleSheet } from 'react-native';
 import RoleSelector from '../components/RoleSelector';
 import { isValidEmail } from '../../../shared/utils/validators';
+import colors from '../../../shared/theme/colors';
 
 export default function LoginScreen({ navigation }) {
   const [role, setRole] = useState('user');
@@ -22,11 +23,11 @@ export default function LoginScreen({ navigation }) {
 
     setError('');
 
-    // Phase 1: no backend yet, just go to the right home page
+    // Phase 1: no backend yet, just go to the right tabs
     if (role === 'user') {
-      navigation.replace('UserHome');
+      navigation.replace('UserTabs');
     } else {
-      navigation.replace('AdvertiserHome');
+      navigation.replace('AdvertiserTabs');
     }
   }
 
@@ -42,6 +43,7 @@ export default function LoginScreen({ navigation }) {
         value={email}
         onChangeText={setEmail}
         placeholder="Email"
+        placeholderTextColor={colors.muted}
         keyboardType="email-address"
         autoCapitalize="none"
         style={styles.input}
@@ -51,6 +53,7 @@ export default function LoginScreen({ navigation }) {
         value={password}
         onChangeText={setPassword}
         placeholder="Password"
+        placeholderTextColor={colors.muted}
         secureTextEntry={!visible}
         style={styles.input}
       />
@@ -66,7 +69,7 @@ export default function LoginScreen({ navigation }) {
       </Pressable>
 
       <View style={styles.footer}>
-        <Text>Don't have an account? </Text>
+        <Text style={styles.footerText}>Don't have an account? </Text>
         <Pressable onPress={() => navigation.navigate('Signup')}>
           <Text style={styles.link}>Sign up</Text>
         </Pressable>
@@ -81,44 +84,47 @@ const styles = StyleSheet.create({
     padding: 24,
     paddingTop: 80,
     gap: 12,
-    backgroundColor: '#fff',
+    backgroundColor: colors.background,
   },
   title: {
     fontSize: 28,
     fontWeight: 'bold',
-    color: '#0f172a',
+    color: colors.primary,
   },
   subtitle: {
     fontSize: 15,
-    color: '#64748b',
+    color: colors.muted,
     marginBottom: 12,
   },
   label: {
     fontSize: 14,
-    color: '#334155',
+    color: colors.text,
   },
   input: {
     borderWidth: 1,
-    borderColor: '#cbd5e1',
+    borderColor: colors.border,
+    backgroundColor: colors.card,
     borderRadius: 10,
     padding: 12,
     fontSize: 16,
+    color: colors.text,
   },
   link: {
-    color: '#2563eb',
+    color: colors.primary,
+    fontWeight: '600',
   },
   error: {
-    color: '#dc2626',
+    color: colors.error,
   },
   button: {
-    backgroundColor: '#2563eb',
+    backgroundColor: colors.primary,
     borderRadius: 10,
     padding: 14,
     alignItems: 'center',
     marginTop: 8,
   },
   buttonText: {
-    color: '#fff',
+    color: colors.card,
     fontSize: 16,
     fontWeight: '600',
   },
@@ -126,5 +132,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     marginTop: 12,
+  },
+  footerText: {
+    color: colors.text,
   },
 });

@@ -1,4 +1,5 @@
 import { View, Text, Pressable, StyleSheet } from 'react-native';
+import colors from '../../../shared/theme/colors';
 
 export default function RoleSelector({ role, onChange }) {
   return (
@@ -28,21 +29,22 @@ const styles = StyleSheet.create({
   option: {
     flex: 1,
     borderWidth: 1,
-    borderColor: '#cbd5e1',
+    borderColor: colors.border,
+    backgroundColor: colors.card,
     borderRadius: 10,
     padding: 12,
     alignItems: 'center',
   },
   selected: {
-    backgroundColor: '#2563eb',
-    borderColor: '#2563eb',
+    backgroundColor: colors.primary,
+    borderColor: colors.primary,
   },
   text: {
     fontSize: 15,
-    color: '#334155',
+    color: colors.text,
   },
   selectedText: {
-    color: '#fff',
+    color: colors.card,
     fontWeight: '600',
   },
 });
