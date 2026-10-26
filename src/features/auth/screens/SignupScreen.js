@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { View, Text, TextInput, Pressable, ScrollView, Alert, StyleSheet } from 'react-native';
 import RoleSelector from '../components/RoleSelector';
 import { isValidEmail, isValidPassword, isValidPhone } from '../../../shared/utils/validators';
+import colors from '../../../shared/theme/colors';
 
 export default function SignupScreen({ navigation }) {
   const [role, setRole] = useState('user');
@@ -44,7 +45,11 @@ export default function SignupScreen({ navigation }) {
   }
 
   return (
-    <ScrollView contentContainerStyle={styles.container} keyboardShouldPersistTaps="handled">
+    <ScrollView
+      style={{ backgroundColor: colors.background }}
+      contentContainerStyle={styles.container}
+      keyboardShouldPersistTaps="handled"
+    >
       <Text style={styles.title}>Create Account</Text>
       <Text style={styles.subtitle}>Sign up to find or post properties</Text>
 
@@ -55,6 +60,7 @@ export default function SignupScreen({ navigation }) {
         value={name}
         onChangeText={setName}
         placeholder="Full name"
+        placeholderTextColor={colors.muted}
         style={styles.input}
       />
 
@@ -62,6 +68,7 @@ export default function SignupScreen({ navigation }) {
         value={email}
         onChangeText={setEmail}
         placeholder="Email"
+        placeholderTextColor={colors.muted}
         keyboardType="email-address"
         autoCapitalize="none"
         style={styles.input}
@@ -71,6 +78,7 @@ export default function SignupScreen({ navigation }) {
         value={phone}
         onChangeText={setPhone}
         placeholder="Phone number"
+        placeholderTextColor={colors.muted}
         keyboardType="phone-pad"
         maxLength={11}
         style={styles.input}
@@ -80,6 +88,7 @@ export default function SignupScreen({ navigation }) {
         value={password}
         onChangeText={setPassword}
         placeholder="Password"
+        placeholderTextColor={colors.muted}
         secureTextEntry={!visible}
         style={styles.input}
       />
@@ -91,6 +100,7 @@ export default function SignupScreen({ navigation }) {
         value={confirmPassword}
         onChangeText={setConfirmPassword}
         placeholder="Confirm password"
+        placeholderTextColor={colors.muted}
         secureTextEntry={!visible}
         style={styles.input}
       />
@@ -106,7 +116,7 @@ export default function SignupScreen({ navigation }) {
       </Pressable>
 
       <View style={styles.footer}>
-        <Text>Already have an account? </Text>
+        <Text style={styles.footerText}>Already have an account? </Text>
         <Pressable onPress={() => navigation.navigate('Login')}>
           <Text style={styles.link}>Log in</Text>
         </Pressable>
@@ -120,49 +130,51 @@ const styles = StyleSheet.create({
     padding: 24,
     paddingTop: 60,
     gap: 12,
-    backgroundColor: '#fff',
   },
   title: {
     fontSize: 28,
     fontWeight: 'bold',
-    color: '#0f172a',
+    color: colors.primary,
   },
   subtitle: {
     fontSize: 15,
-    color: '#64748b',
+    color: colors.muted,
     marginBottom: 12,
   },
   label: {
     fontSize: 14,
-    color: '#334155',
+    color: colors.text,
   },
   input: {
     borderWidth: 1,
-    borderColor: '#cbd5e1',
+    borderColor: colors.border,
+    backgroundColor: colors.card,
     borderRadius: 10,
     padding: 12,
     fontSize: 16,
+    color: colors.text,
   },
   hint: {
     fontSize: 13,
-    color: '#64748b',
+    color: colors.muted,
     marginTop: -6,
   },
   link: {
-    color: '#2563eb',
+    color: colors.primary,
+    fontWeight: '600',
   },
   error: {
-    color: '#dc2626',
+    color: colors.error,
   },
   button: {
-    backgroundColor: '#2563eb',
+    backgroundColor: colors.primary,
     borderRadius: 10,
     padding: 14,
     alignItems: 'center',
     marginTop: 8,
   },
   buttonText: {
-    color: '#fff',
+    color: colors.card,
     fontSize: 16,
     fontWeight: '600',
   },
@@ -171,5 +183,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     marginTop: 12,
     marginBottom: 24,
+  },
+  footerText: {
+    color: colors.text,
   },
 });

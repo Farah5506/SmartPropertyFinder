@@ -1,12 +1,14 @@
-import { View, Text, Pressable } from 'react-native';
+import ComingSoon from '../../../shared/components/ComingSoon';
 
-export default function UserHomeScreen({ navigation }) {
+export default function UserHomeScreen() {
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', gap: 12 }}>
-      <Text style={{ fontSize: 18 }}>User Home (coming soon)</Text>
-      <Pressable onPress={() => navigation.replace('Login')}>
-        <Text style={{ color: '#2563eb' }}>Log out</Text>
-      </Pressable>
-    </View>
+    <ComingSoon
+      title="User Home"
+      links={[
+        { label: 'Properties for Rent', route: 'RentListings' },
+        { label: 'Properties for Buy', route: 'BuyListings' },
+        { label: 'View an Advertiser', route: 'AdvertiserPublicProfile' },
+      ]}
+    />
   );
 }
