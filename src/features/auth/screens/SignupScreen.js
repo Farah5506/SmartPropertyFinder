@@ -38,7 +38,6 @@ export default function SignupScreen({ navigation }) {
 
     setError('');
 
-    // Phase 1: account is not saved yet, storage comes in Phase 2
     Alert.alert('Account created', 'You can now log in', [
       { text: 'OK', onPress: () => navigation.navigate('Login') },
     ]);

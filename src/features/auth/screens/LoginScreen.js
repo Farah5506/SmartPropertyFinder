@@ -23,7 +23,6 @@ export default function LoginScreen({ navigation }) {
 
     setError('');
 
-    // Phase 1: no backend yet, just go to the right tabs
     if (role === 'user') {
       navigation.replace('UserTabs');
     } else {
