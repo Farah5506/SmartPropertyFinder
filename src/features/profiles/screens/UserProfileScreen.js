@@ -17,7 +17,6 @@ export default function UserProfileScreen() {
   const myReviews = reviews.filter((r) => r.targetId === profile.id);
   const average = getAverageRating(myReviews);
 
-  // true if the user changed anything
   const hasChanges = name !== profile.name || phone !== profile.phone || email !== profile.email;
 
   function handleSave() {
